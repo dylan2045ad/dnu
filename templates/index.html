@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DNU — Dylan's New York Updates</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="circuit-bg" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo-dot"></div>
+      <div class="brand-text">
+        <h1>DNU</h1>
+        <p class="tagline">Dylan's New York Updates &mdash; last 12 hours</p>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <button id="refresh-btn" class="btn btn-primary" title="Re-fetch all sources">
+        <span class="btn-icon">&#x21bb;</span> Refresh all sources
+      </button>
+      <button id="mark-all-btn" class="btn btn-ghost" title="Mark every visible headline as read">
+        Mark all as read
+      </button>
+    </div>
+  </header>
+
+  <main id="feed-container">
+    <div class="loading">Loading the latest from across the five boroughs&hellip;</div>
+  </main>
+
+  <footer class="footer">
+    <span id="last-updated">Not yet refreshed</span>
+    <span class="footer-sep">&middot;</span>
+    <span id="unread-count">&mdash;</span>
+  </footer>
+
+  <template id="source-template">
+    <section class="source">
+      <header class="source-header">
+        <h2 class="source-name"></h2>
+        <a class="source-link" target="_blank" rel="noopener">visit &rarr;</a>
+      </header>
+      <ul class="article-list"></ul>
+    </section>
+  </template>
+
+  <template id="article-template">
+    <li class="article">
+      <div class="article-main">
+        <a class="article-title" target="_blank" rel="noopener"></a>
+        <div class="article-meta">
+          <time class="article-time"></time>
+        </div>
+      </div>
+      <button class="btn btn-read" title="Mark this headline as read">
+        Mark as read
+      </button>
+    </li>
+  </template>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
